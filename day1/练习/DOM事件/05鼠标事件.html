@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>事件</title>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+div{
+	background:#5bc0de;
+	width:100px;
+	height:20px;
+	padding:40px;
+	cursor:pointer;
+	text-align:center;
+	color:#fff;
+	margin:20px;
+	margin-left:72px;
+}
+#myDiv{
+	margin:0;
+	position:absolute;
+	left:300px;
+	top:20px;
+	background:#337ab7;
+	cursor:all-scroll
+}
+</style>
+
+<script>
+ 
+window.onload = function(){
+	var oDiv = document.getElementById("myDiv");
+	//拖拽
+	oDiv.onmousedown = function(ev){
+		var ev = ev || window.event;
+		var disX = ev.clientX - this.offsetLeft;
+		var disY = ev.clientY - this.offsetTop;
+		this.style.background = "#09C";
+		
+		document.onmousemove = function (ev){
+			
+			var ev = ev || window.event;
+			oDiv.style.background = "#0C9";
+			oDiv.style.left = (ev.clientX - disX) + 'px';
+			oDiv.style.top = (ev.clientY - disY) + 'px';
+		};
+		
+		document.onmouseup = function (){
+			document.onmousemove = null;
+			document.onmouseup = null;
+			oDiv.style.background = "#337ab7";
+		};
+		return false;
+	}
+	
+	
+	//鼠标移入移出监测
+	var oDiv2 = document.getElementById("myDiv2");
+	oDiv2.onmouseover = function(){
+		this.style.backgroundColor = "#337ab7";
+		this.innerHTML = "鼠标已移入";
+	}
+	oDiv2.onmouseout = function(){
+		this.style.backgroundColor = "#5bc0de";
+		this.innerHTML = "鼠标移入移出事件监测";
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+	<div id="myDiv">拖动我</div>
+    
+    <div id="myDiv2">鼠标移入移出事件监测</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>DOM树</title>
+    <style>
+      /*div{
+      	width:100px;
+      	height:20px;
+      	margin:20px;
+      	padding:40px;
+      	background:#5bc0de;
+      	cursor:pointer;
+      	text-align:center;
+      	color:#fff;
+      }
+      div:nth-child(odd){
+      	background:#337ab7;
+      }*/
+    </style>
+    
+  </head>
+  
+  <body>
+  	<img id="myImg" width="1000" src="http://img2.niutuku.com/desk/1208/1401/ntk-1401-8806.jpg" />
+  </body>
+  <script>
+    window.onload = function(){
+        alert("页面dom加载完成");
+      }
+  	document.getElementById("myImg").onload = function(){
+  		alert("图片已经加载完成");
+  	}
+  </script>
+</html>

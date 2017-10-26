@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>事件</title>
+<style>
+.content{
+	width:800px;
+	margin:50px auto;
+}
+input, select{
+	border:1px solid #a9a9a9;
+	height:34px;
+	line-height:34px;
+	width:550px;
+	margin-bottom:20px;
+	padding-left:5px;
+}
+label{
+	width:120px;
+	text-align:right;
+	display:inline-block;
+}
+#registerBtn{
+	background:#3498db;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	width:100px;
+	line-height:34px;
+	border:none 0;
+	cursor:pointer;
+	margin:20px 20px 0 0;
+	margin-left:120px;
+}
+#tipContent{
+	padding:20px 0 0 30px;
+	text-align:center;
+}
+.btns{
+	background:#5bc0de;
+	width:100px;
+	height:20px;
+	margin:20px;
+	padding:40px;
+	cursor:pointer;
+	text-align:center;
+	color:#fff;
+	margin-left:72px;
+}
+.btns:nth-child(odd){
+	background:#337ab7;
+}
+</style>
+
+<script>
+ 
+window.onload = function(){
+	
+	var oName = document.getElementById("name");
+	var oSex = document.getElementById("sex");
+	oName.onfocus = function(){
+		this.style.backgroundColor = '#a7e8fb';
+		document.getElementById("tipContent").innerHTML = "输入框已获得焦点";
+	};
+	oName.onblur = function(){
+		this.style.backgroundColor = '#fff';
+		document.getElementById("tipContent").innerHTML = "输入框失去焦点";
+	};
+	oSex.onchange = function(){
+		document.getElementById("tipContent").innerHTML = "你选择的性别是："+oSex.value;
+	};
+	
+	document.getElementById("clickBtn").onclick = function(){
+		alert("单击成功");
+	}
+	document.getElementById("ondblclickBtn").ondblclick = function(){
+		alert("双击成功");
+	}
+	
+}
+
+</script>
+
+</head>
+
+<body>
+	<div class="content">
+        <div><label>昵称：</label><input id="name" type="text" placeholder=""></div>
+        <div>
+            <label>性别：</label>
+            <select id="sex">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </div>
+        <div id="tipContent"></div>
+        <div id="clickBtn" class="btns">点击事件</div>
+        <div id="ondblclickBtn" class="btns">双击事件</div>
+	</div>
+	
+</body>
+</html>

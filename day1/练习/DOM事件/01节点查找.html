@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>节点查找</title>
+<style>
+div{
+	font-size:20px;
+	line-height:40px;
+}
+.parents_wrap{
+	position:relative;
+	color:#888;
+}
+</style>
+
+<script>
+
+ 
+window.onload = function(){
+	
+	//children   与  childNodes 
+	console.log( document.body.children ); //包含7个节点的数组
+	console.log( document.body.childNodes ); //包含7个实节点，以及8个空节点组成的 长度为15的数组
+	
+	//firstChild 与 firstElementChild 
+	console.log( document.body.firstChild ); //返回第一个节点，空节点 (换行)
+	console.log( document.body.firstElementChild ); //返回第一个实节点  <h1>同学们：</h1>
+	
+	//lastChild  与 lastElementChild  
+	console.log( document.body.lastChild ); //返回第一个节点，空节点 (换行)
+	console.log( document.body.lastElementChild ); //返回最后一个实节点  <div class="girls">乔宛如</div>
+	
+	//nextSibling   与 nextElementSibling   
+	console.log( document.getElementById("xiaoming").nextSibling ); //空节点
+	console.log( document.getElementById("xiaoming").nextElementSibling ); //<div class="boys">李雷</div>
+	
+	
+	//previousSibling  与 previousElementSibling    
+	console.log( document.getElementById("xiaoming").previousSibling ); //空节点
+	console.log( document.getElementById("xiaoming").previousElementSibling ); //<h1>同学们：</h1>
+	
+	//parentNode 与 offsetParent 
+	
+	console.log( document.getElementById("hanFather").parentNode ); //返回直接父级  <div class="parents">
+	console.log( document.getElementById("hanFather").offsetParent ); //返回第一个有定位属性的父级 <div class="parents_wrap">   。。 如果没有定位父级，则返回body
+	
+}
+
+
+</script>
+
+</head>
+
+<body>
+	<h1>同学们：</h1>
+    <div class="boys" id="xiaoming">小明</div>
+    <div class="boys">李雷</div>
+    <div class="girls">韩梅梅</div>
+    <div class="parents_wrap">
+    	<div>&nbsp;&nbsp;韩梅梅父母：</div>
+        <div class="parents">
+        	<div id="hanFather">&nbsp;&nbsp;&nbsp;&nbsp;父：韩小东</div>
+        	<div>&nbsp;&nbsp;&nbsp;&nbsp;母：刘琼瑶</div>
+        </div>
+    	
+    </div>
+    <div class="girls">刘晓玲</div>
+    <div class="girls">乔宛如</div>
+</body>
+
+
+</html>
