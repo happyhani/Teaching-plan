@@ -1,0 +1,76 @@
+左佳怡（web前端day3）
+1回顾：提问
+2.1 javascript简介
+ 2.1.1 定义
+	导入（演示一些javascript例子，why）
+	定义：基于对象和事件驱动的嵌入式脚本语言
+	基于对象：
+	事件驱动：
+	嵌入式：
+	脚本：
+ 2.1.2javascript特点（语法和java类似，解释性语言）
+ 2.1.3javascript组成
+ 2.1.4基本结构(script标签)
+	(1,script位置，2script数量，3为什么使用<!--  -->，type属性)
+	案例（第1个javascript 在页面上输出hello world）
+ 	练习
+ 2.1.5javascript执行原理
+	javascript代码发到客端，由浏览器解释执行（javascript在客户端执行，客户 端或看到javascript代码）
+ 2.1.6在网页中引入javascript的3种方式
+
+2.2 核心语法
+	2.2.1数据类型
+	2.2.2变量（弱数据类型，typeof）
+	2.2.3内置对象Math,Date,Array,String
+	2.2.3运算符
+	2.2.4逻辑控制语句（简单介绍，java中讲过）
+	2.2.5注释
+	练习（多个）
+	2.2.6调试
+
+	2.2.7函数
+		2.2.7.1 
+
+系统函数
+		parseInt(),parseFloat(),isNaN()
+		2.2.7.2 
+
+自定义函数
+		函数定义  函数调用
+		案例：
+		练习
+		匿名函数（定义，调用，where）
+	2.2.8事件
+		onclick(上例)  
+		onload
+		
+2.3 DOM	
+	2.3.1DOM定义
+	2.3.2DOM与网页的关系
+	2.3.3DOM的常用方法(对比法画图表)
+
+	getElementById()案例：求总分，平均分
+	练习
+	getElementsByName()案例：复选框全选/全不选
+	练习
+	.style.display +click( 改onmouseover和onmouseout)案例：导航菜单的隐藏和显示
+
+2.4 BOM
+	2.4.1BOM定义（强调与DOM的区别）
+	2.4.2BOM的应用场景
+	2.4.3window对象的方法
+	方法：
+	alert(),confirm(),prompt();
+	案例：
+	open(),close();
+	案例：
+	setTimeout(),setInterval()
+	案例：时钟
+	2.4.4 history对象和location对象
+	案例：多个页面的跳转，刷新，前进，后退
+2.5 表单验证
+	2.5.1 onsubmit
+	2.5.2 onfocus,onblur
+	2.5.3正则
+
+扩展内容：自定义对象
