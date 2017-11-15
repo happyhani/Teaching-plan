@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <button id="alert">alert</button>
+    <button id="confirm">confirm</button>
+    <button id="prompt">prompt</button>
+    <script>
+      var oAlert = document.getElementById("alert");
+      var oConfirm = document.getElementById("confirm");
+      var oPrompt = document.getElementById("prompt");
+      
+      oAlert.onclick = function () {
+        alert('1');
+      } 
+      
+      oConfirm.onclick  =function () {
+        var msg = confirm('今天下雨，带伞了吗？');
+        console.log(msg); // 点 确定 true 取消 false
+      }
+      
+      oPrompt.onclick  =function () {
+        var msg = prompt('今天星期几？');
+        console.log(msg);
+      }
+    </script>
+    
+   
+	</body>
+</html>

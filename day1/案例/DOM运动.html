@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>运动</title>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+
+button{
+	background:#3498db;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	width:100px;
+	line-height:34px;
+	border:none 0;
+	cursor:pointer;
+	margin:20px;
+}
+#moveDiv{
+	width:100px;
+	height:100px;
+	background:#09F;
+	position:absolute;
+	left:20px;
+	top:100px;
+}
+</style>
+
+<script>
+
+window.onload = function(){
+	
+	var oDiv = document.getElementById("moveDiv");
+	var oMove = document.getElementById("starMove");
+	var oStop = document.getElementById("stopMove");
+	var timer = null;
+	var distance = 1;
+	
+	oMove.onclick = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			
+			if(oDiv.offsetLeft > window.innerWidth-100){
+				distance = -1;
+			}else if(oDiv.offsetLeft<0){
+				distance = 1;
+			}
+			
+			oDiv.style.left = oDiv.offsetLeft + distance + "px";
+			
+		},1)
+	}
+	
+	oStop.onclick = function(){
+		clearInterval(timer);
+	}
+	
+	
+	
+}
+
+</script>
+
+</head>
+
+<body>
+    <button id="starMove">开始运动</button></div> <button id="stopMove">停止运动</button></div>
+    <div id="moveDiv"></div>
+</body>
+</html>

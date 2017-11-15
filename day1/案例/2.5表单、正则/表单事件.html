@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+  	<form action="http://www.runoob.com/try/demo_source/demo-form.php" onsubmit="myForm()">
+      输入名字: <input type="text" name="fname">
+      <input type="submit" value="提交">
+    </form>
+    <form action="http://www.runoob.com/try/demo_source/demo-form.php" id="myForm1">
+     再 输入姓名: <input type="text" name="fname">
+      <input type="submit" value="提交">
+    </form>
+    
+    <script>
+      function myForm() {
+        alert("表单已提交");
+      }
+   
+      document.getElementById("myForm1").onsubmit = function() {fn1()};
+      function fn1() {
+        alert("表单已提交");
+      }
+
+    </script>
+	</body>
+</html>

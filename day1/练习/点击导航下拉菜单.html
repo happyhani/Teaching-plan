@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 20px;
+			}
+			li {
+				list-style: none;
+				width: 100px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				background: paleturquoise;
+				float: left;
+				margin-left: 50px;
+				position: relative;
+			}
+			
+			div {
+				width: 240px;
+				height: 100px;
+				background: yellowgreen;
+				display: none;
+				position: absolute;
+				top: 50px;
+				left: -50px;
+				
+			}
+			.clearfix:after {
+				content: '';
+				display: block;
+				height: 0;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<!--子元素浮动，父元素高度塌陷--> 
+		<ul class="clearfix">
+			<li>
+				<a href="#">首页</a>
+				<div>
+					<a href="#">详情1</a>
+					<a href="#">详情2</a>
+					<a href="#">详情3</a>
+					<a href="#">详情4</a>
+					<a href="#">详情5</a>
+					<a href="#">详情6</a>
+					<a href="#">详情7</a>
+					<a href="#">详情8</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">商品</a>
+				<div>
+          <a href="#">商品1</a>
+          <a href="#">商品2</a>
+          <a href="#">商品3</a>
+          <a href="#">商品4</a>
+          <a href="#">商品5</a>
+          <a href="#">商品6</a>
+          <a href="#">商品7</a>
+          <a href="#">商品8</a>
+        </div>
+			</li>
+			<li>
+				<a href="#">口碑</a>
+			</li>
+			<li>
+				<a href="#">新品</a>
+				<div>
+          <a href="#">新品1</a>
+          <a href="#">新品2</a>
+          <a href="#">新品3</a>
+          <a href="#">新品4</a>
+          <a href="#">新品5</a>
+          <a href="#">新品6</a>
+          <a href="#">新品7</a>
+          <a href="#">新品8</a>
+        </div>
+			</li>
+		</ul>
+		<script>
+		  var aLi = document.getElementsByTagName("li");
+		  for (var i=0;i<aLi.length;i++) {
+		  	aLi[i].onclick = function () {
+		  	  if (this.children[1].style.display == 'block') {
+		  	  	this.children[1].style.display = 'none';
+		  	  }else {
+		  	    this.children[1].style.display = 'block';
+		  	  }
+		  	  
+          // 取消冒泡
+          this.children[1].onclick = function (e) {
+          	window.event ? window.event.cancelBubble = true : e.stopPropagation();
+          }
+		  	}
+		  }
+		</script>
+	</body>
+</html>

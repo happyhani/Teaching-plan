@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>字符串操作</title>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+input{
+	border:1px solid #a9a9a9;
+	height:34px;
+	line-height:34px;
+	width:550px;
+	margin:20px 20px 0 0;
+	padding-left:5px;
+	float:left;
+}
+div{
+	background:#3498db;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	width:100px;
+	line-height:34px;
+	border:none 0;
+	cursor:pointer;
+	margin:20px 20px 0 40px;
+	float:left;
+}
+</style>
+
+<script>
+/*
+	要求：将输入的字符串反转，可以有多种实现方式
+*/
+window.onload = function(){
+	var oDiv = document.getElementById("myDiv");
+	var oInput = document.getElementById("myInput");
+	
+	oDiv.onclick = function(){
+		var arr = oInput.value.split("");
+		oInput.value = arr.reverse().join("");
+	}
+	
+}
+
+</script>
+
+</head>
+
+<body>
+	<input type="text" id="myInput" />
+	<div id="myDiv">反向排序</div>
+</body>
+</html>

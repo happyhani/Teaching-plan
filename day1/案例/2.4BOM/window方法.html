@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关闭打开网页</title>
+	</head>
+	<body>
+	  <button id="openBtn">打开百度</button>
+	  <button id="closeBtn">关闭页面</button>
+	  
+	  <script>
+	    var openBtn = document.getElementById("openBtn");
+	    var closeBtn = document.getElementById("closeBtn");
+	    
+	    openBtn.onclick = function () {
+	    	window.open('http://www.baidu.com');
+	    } 
+	    closeBtn.onclick  =function () {
+	    	window.close();
+	    }
+	  </script>
+	</body>
+</html>
