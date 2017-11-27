@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>正则表达式</title>
+
+
+<script>
+
+ 
+window.onload = function(){
+	
+	//量词
+	//{n,m}，至少出现n次，最多m次
+	var reg07 = /a{2,3}/; //a至少出现2次，最多出现3次；
+	document.write( reg07.test("aabbcc") +"</br>");
+	
+	//* 任意次 {0,}
+	var reg08 = /a*/; 
+	document.write( reg08.test("aabbcc") +"</br>");
+	
+	//？ 零次或一次 {0,1}
+	var reg09 = /a?/;
+	document.write( reg09.test("aabbcc") +"</br>");
+	
+	//+ 一次或任意次{1,}
+	var reg010 = /a+/; 
+	document.write( reg010.test("aabbcc") +"</br>");
+	
+	//{n} 正好n次
+	var reg011 = /a{2}/;
+	document.write( reg011.test("aabbcc") +"</br>");
+	
+	//首位
+	var reg012 = /^a/;
+	document.write( reg012.test("aabbcc") +'首位'+"</br>");
+	//结尾
+	var reg013 = /a$/;
+	document.write( reg013.test("ccbbaa") +'结尾'+"</br>");
+	
+	//分组（）
+	var reg14 = /ab+/g //此时的"+"只对b作用  ab abb abbb abbbb
+	document.write( "ababccabb".replace(reg14, "m") +"</br>"); //mmccm
+	
+	var reg14 = /(ab)+/g //此时的"+"对ab作用  ab abab ababab
+	document.write( "ababccabb".replace(reg14, "m") +"</br>"); //mccmb
+
+	
+}
+
+
+</script>
+
+</head>
+
+<body>
+    
+</body>
+
+
+</html>
